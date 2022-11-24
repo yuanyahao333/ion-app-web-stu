@@ -7,13 +7,14 @@ services:
       # Dev caddy file
       - "./Caddyfile:/etc/caddy/Caddyfile"
       - "caddy:/data"
+      - "./certs:/certs"
     ports:
       # Dev port
       - 9090:9090
     networks:
       - ionnet
     environment:
-    - WWW_URL
+    - WWW_URL=192.168.1.104
     - ADMIN_EMAIL
 
 volumes:
